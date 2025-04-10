@@ -1,0 +1,6 @@
+
+# user-defined functions in one-liner format
+# format:
+# function-name  command; ...
+# translated into: function-name() { command; ...; }
+
