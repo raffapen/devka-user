@@ -1,2 +1,12 @@
 
 # user-defined functions
+
+dip() {
+	docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$@"
+}
+
+glo() {
+	local x="$1"
+	x=${x:--10}
+	git log --oneline $x
+}
