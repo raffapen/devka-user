@@ -10,3 +10,10 @@ function glo() {
 	x=${x:--10}
 	git log --oneline $x
 }
+
+function dvm() {
+        local name="$1"
+        local image=${2:-ubuntu:noble}
+        docker run -it --rm --name $name -v /v:/v --privileged $image /bin/bash
+}
+
