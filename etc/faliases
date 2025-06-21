@@ -4,7 +4,9 @@
 # function-name  command; ...
 # translated into: function-name() { command; ...; }
 
-dip		docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$@"
-glo		local x="$1"; x=${x:--10}; git log --oneline $x
+# docker
+dip    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$@"
 
-br-t	git for-each-ref --sort='-committerdate' --format='%(committerdate:short)  %(refname)' refs/heads | sed -e 's-refs/heads/--'
+# git
+glo    local x="$1"; x=${x:--10}; git log --oneline $x
+br-t   git for-each-ref --sort='-committerdate' --format='%(committerdate:short)  %(refname)' refs/heads | sed -e 's-refs/heads/--'
