@@ -16,7 +16,7 @@ h             history
 a             alias
 ua            unalias
 via           vim $HOME/.profile.d/aliases.sh; . $HOME/.profile.d/aliases.sh
-vi-profiles   sudo vi /etc/profile /etc/bash.bashrc $HOME/.profile $HOME/.bashrc
+vi-profiles   sudo vi /etc/profile /etc/bash.bashrc $HOME/.bash_profile $HOME/.bashrc
 rea           userdefs
 
 # files
