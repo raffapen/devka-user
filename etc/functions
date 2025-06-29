@@ -12,8 +12,11 @@ function glo() {
 }
 
 function dvm() {
-        local name="$1"
-        local image=${2:-ubuntu:noble}
-        docker run -it --rm --name $name -v /v:/v --privileged $image /bin/bash -l
+	if [[ -z $1 ]]; then
+		echo "usage: dvm [name] [image]"
+		return
+	fi
+	local name="$1"
+	local image=${2:-ubuntu:noble}
+	docker run -it --rm --name $name -e DOCKER_NAME=$name -v /v:/v --privileged $image /bin/bash -l
 }
-
