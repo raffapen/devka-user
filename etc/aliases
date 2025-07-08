@@ -43,6 +43,7 @@ dim     d images
 dps     d ps -a
 dpsx    docker container list -f status=exited
 ddang   d images --filter "dangling=true" --no-trunc
+dports  d ps --format "table {{.Names}}\t{{.Ports}}"
 rmi     d rmi
 kc      kubectl
 
